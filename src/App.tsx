@@ -1,12 +1,12 @@
 import React from 'react';
 import Book from "./components/book";
+import { useQuery, gql } from '@apollo/client';
 
-function App() {
+export default function App() {
     return (
         <div className="App">
-        <Book />
+            <h1>Hello world</h1>
+            <Book />
         </div>
     );
-    }
-
-export default App;
+}
