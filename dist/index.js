@@ -85,24 +85,22 @@
 //   listen: { port: 4000 },
 // });
 // console.log(`🚀  Server ready at: ${url}`);
-import { InMemoryCache } from "@apollo/client";
-import { ApolloClient } from "@apollo/client";
-import { gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 const client = new ApolloClient({
     uri: 'http://localhost:4000/',
     cache: new InMemoryCache(),
 });
-client
-    .query({
-    query: gql `
-    query GetBooks {
-      books {
-        id
-        title
-        author
-        rate
-      }
-    }
-  `,
-})
-    .then(result => console.log(result));
+// client
+//   .query({
+//     query: gql`
+//     query GetBooks {
+//       books {
+//         id
+//         title
+//         author
+//         rate
+//       }
+//     }
+//   `,
+//   })
+//   .then(result => console.log(result));

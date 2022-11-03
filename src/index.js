@@ -103,28 +103,21 @@
 
 // console.log(`🚀  Server ready at: ${url}`);
 
-
-import { InMemoryCache } from "@apollo/client";
-import { ApolloClient } from "@apollo/client";
-import { gql } from '@apollo/client';
+import React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import App from './App';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/',
+  uri: 'https://flyby-gateway.herokuapp.com/',
   cache: new InMemoryCache(),
-
 });
 
-client
-  .query({
-    query: gql`
-    query GetBooks {
-      books {
-        id
-        title
-        author
-        rate
-      }
-    }
-  `,
-  })
-  .then(result => console.log(result));
+// Supported in React 18+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+);
