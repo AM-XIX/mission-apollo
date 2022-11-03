@@ -78,17 +78,3 @@ const { url } = await startStandaloneServer(server, {
     listen: { port: 4000 },
 });
 console.log(`🚀  Server ready at: ${url}`);
-// import React from 'react';
-// import * as ReactDOM from 'react-dom/client';
-// import { default as ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-// import App from './App';
-// const client = new ApolloClient({
-//     uri: 'http://localhost:4000/',
-//     cache: new InMemoryCache(),
-// });
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//     <ApolloProvider client={client}>
-//         <App />
-//     </ApolloProvider>,
-// );
